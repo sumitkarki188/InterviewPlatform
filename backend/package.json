@@ -3,16 +3,20 @@
   "version": "1.0.0",
   "main": "src/server.js",
   "scripts": {
-    "dev":"node --watch src/server.js"
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js"
   },
-  "type":"module",
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
+    "inngest": "^3.44.3",
+    "interview_platform": "file:..",
     "mongoose": "^8.19.1"
   }
 }
