@@ -13,6 +13,8 @@ function App() {
         <SignOutButton />
       </SignedIn>
 
+      <UserButton/>
+
       <UserButton />
     </>
   )
