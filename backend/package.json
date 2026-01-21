@@ -18,6 +18,6 @@
     "inngest": "^3.44.3",
     "interview_platform": "file:..",
     "mongoose": "^8.19.1",
-    "stream-chat": "^9.24.0"
+    "stream-chat": "^9.29.0"
   }
 }
