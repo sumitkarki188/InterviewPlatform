@@ -22,9 +22,12 @@ const syncUser = inngest.createFunction(
 
         await User.create(newUser);
 
+        // FIX: Pass correct data to Stream
         await upsertStreamUser({
-            id:newUser.clerkId.toString(),
-            name:newUser.profileImage,
+            id: newUser.clerkId,  // Stream user ID
+            name: newUser.name,   // FIX: Was profileImage, should be name
+            image: newUser.profileImage,  // Add profile image
+            email: newUser.email  // Add email for reference
         });
         
         return { success: true, userId: id };
@@ -40,7 +43,7 @@ const deleteUserFromDB = inngest.createFunction(
         const { id } = event.data;
         await User.deleteOne({ clerkId: id });
 
-        await deleteStreamUser(id.toString());
+        await deleteStreamUser(id);  // Remove .toString() - not needed
         
         return { success: true, deletedUserId: id };
     }
